@@ -11,6 +11,7 @@ interface IRoute {
 export enum RouteNames {
 	HOME = '/',
 	SIGN_IN = '/sign-in',
+	SIGN_UP = '/sign-up',
 }
 
 export enum PageNames {
