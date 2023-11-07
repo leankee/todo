@@ -18,7 +18,7 @@ const SignIn = () => {
 				label="E-mail"
 				rules={[
 					{ required: true },
-					{ type: 'email', message: 'Неверный формат E-mail' }
+					{ type: 'email', message: 'Неверный формат E-mail' },
 				]}
 			>
 				<Input

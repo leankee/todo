@@ -14,7 +14,7 @@ export const PageForm: FC<PageFormProps> = ({ title, logo, form, children }) => 
 	return (
 		<div className={styles.main}>
 			<Flex align="center" vertical>
-				<img className={styles.logo} src={Logo} alt="Logo" />
+				<img className={styles.logo} src={Logo} alt="Logo"/>
 				<Card className={styles.form}>
 					<Flex align="center" vertical>
 						<Typography.Text className={styles.form__title}>{title}</Typography.Text>

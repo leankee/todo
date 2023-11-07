@@ -11,7 +11,7 @@ export interface PageProps {
 export const Page: FC<PageProps> = ({ header, loading, children }) => {
 	return (
 		<div className={styles.main}>
-			{header && <PageHeader {...header} loading={loading} />}
+			{header && <PageHeader {...header} loading={loading}/>}
 			{children}
 		</div>
 	);
