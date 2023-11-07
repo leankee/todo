@@ -1,0 +1,28 @@
+// Colors
+$background: rgb(9, 16, 27);
+$component: rgb(6, 9, 16);
+$default: rgb(12, 22, 36);
+$text: rgb(250, 250, 250);
+$border: rgba(250, 250, 250, .25);
+
+$primary: rgb(60, 154, 232);
+$success: rgb(34, 195, 142);
+$warning: rgb(243, 139, 0);
+$error: rgb(235, 87, 87);
+
+// Sizes
+$container-width: 1324px;
+
+:export {
+  background: $background;
+  component: $component;
+  default: $default;
+  text: $text;
+
+  primary: $primary;
+  success: $success;
+  warning: $warning;
+  error: $error;
+
+  containerWidth: $container-width;
+}
