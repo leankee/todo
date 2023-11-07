@@ -1,0 +1,24 @@
+@import './variables.scss';
+
+body {
+  background: $background;
+  color: rgba($text, .85);
+}
+
+.ant-form {
+  &-item {
+    .ant-input-prefix {
+      color: rgba($text, .45);
+      margin-inline-end: 8px;
+    }
+  }
+}
+
+input {
+  &:-webkit-autofill {
+    &, &:hover, &:focus, &:active {
+      transition-delay: 3600s;
+      transition-property: background-color, color;
+    }
+  }
+}
