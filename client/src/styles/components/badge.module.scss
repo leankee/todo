@@ -1,0 +1,35 @@
+@import "../variables";
+
+.middle {
+  height: 24px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: normal;
+  color: rgba($text, .85);
+  background: rgba($text, .1);
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.small {
+  height: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: normal;
+  color: rgba($text, .85);
+  background: rgba($text, .1);
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.error {
+  background: rgba($error, .5);
+}
+
+.success {
+  background: rgba($success, .5);
+}
+
+.warning {
+  background: rgba($warning, .5);
+}

@@ -1,0 +1,195 @@
+@import "../variables";
+
+.main {
+  min-width: $sidebar-width;
+  max-width: $sidebar-width;
+  height: 100%;
+  overflow-x: hidden;
+  transition: min-width .3s, max-width .3s;
+
+  .logo {
+    overflow: hidden;
+    min-height: 56px;
+    padding: 0 10px;
+    transition: all .3s;
+  }
+
+  .search {
+    padding: 8px;
+
+    &__input {
+      border: none;
+      padding: 8px 14px;
+      background-color: rgba($text, .15);
+
+      > span {
+        margin-inline-end: 14px !important;
+      }
+
+      > input {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    transition: width .3s;
+  }
+
+  .menu {
+    padding: 8px;
+    transition: width .3s;
+
+    &__group {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    &__title {
+      padding-bottom: 4px;
+      border-bottom: 1px solid $border;
+      height: 28px;
+      overflow: hidden;
+      position: relative;
+      color: rgba($text, .85);
+
+      &__container {
+        padding-left: 4px;
+        transition: opacity .3s;
+      }
+
+      &__short {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 24px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity .3s;
+      }
+
+      &__text {
+        font-size: 16px;
+        line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        user-select: none;
+      }
+    }
+
+    &__links {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    &__link {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      text-align: start;
+      gap: 14px;
+      padding: 11px 13px !important;
+      color: $primary;
+
+      > span {
+        margin-inline-end: 0 !important;
+      }
+
+      &__title {
+        width: 100%;
+
+        &__text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 14px;
+          line-height: 1;
+          color: rgba($text, .85);
+        }
+      }
+
+      &:not(:disabled):not(.ant-btn-disabled):hover {
+        color: $primary;
+        background-color: rgba($text, .05);
+      }
+    }
+
+    &__link_active {
+      &, &:not(:disabled):not(.ant-btn-disabled):hover, &:not(:disabled):not(.ant-btn-disabled):active, &:not(:disabled):not(.ant-btn-disabled):focus {
+        //font-weight: 600;
+        background-color: rgba($text, .1);
+      }
+    }
+  }
+
+  .avatar {
+    overflow: hidden;
+    transition: all .3s;
+
+    .menu__link {
+      padding: 3px 13px 3px 5px !important;
+      gap: 9px;
+
+      &__icon {
+        height: 32px;
+      }
+    }
+
+    &__picture {
+      min-width: 32px;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+.avatar__menu {
+  min-width: $sidebar-width - 16px !important;
+  max-width: $sidebar-width - 16px !important;
+}
+
+.collapsed {
+  min-width: $sidebar-collapsed-width;
+  max-width: $sidebar-collapsed-width;
+
+  .logo {
+    padding: 0 8px;
+  }
+
+  .search {
+    &__input {
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+  }
+
+  .menu {
+    &__title {
+      &__container {
+        opacity: 0;
+      }
+
+      &__short {
+        opacity: 1;
+      }
+    }
+
+    &__link {
+      padding: 11px !important;
+    }
+  }
+
+  .avatar {
+    .menu__link {
+      padding: 3px 13px 3px 3px !important;
+    }
+  }
+}
