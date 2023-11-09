@@ -1,7 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
+import { userActions } from '../store/user/user.slice';
 
-const actions = {};
+const actions = {
+	...userActions,
+};
 
 export const useActions = () => {
 	const dispatch = useDispatch();
