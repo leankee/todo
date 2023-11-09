@@ -70,8 +70,7 @@ export const Layout: FC<LayoutProps> = () => {
 			<div className={styles.container}>
 				{isLoading
 					? <div className={styles.loading}><Spin size="large"/></div>
-					: <Outlet/>
-				}
+					: <Outlet/>}
 			</div>
 		</Flex>
 	);
