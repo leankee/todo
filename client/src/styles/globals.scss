@@ -22,3 +22,11 @@ input {
     }
   }
 }
+
+.ant-divider {
+  border-block-start: 1px solid rgba($text, .25);
+}
+
+.ant-divider-horizontal {
+  margin: 0;
+}
