@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
-import { Button, Flex, Skeleton, Space, Typography } from 'antd';
+import { Flex, Skeleton, Space, Typography } from 'antd';
 import styles from '../../styles/components/page.module.scss';
+import { LoadingOutlined } from '@ant-design/icons';
 
 export interface PageHeaderProps {
 	title: string | undefined;
@@ -28,7 +29,7 @@ export const PageHeader: FC<PageHeaderProps> = ({ title, loading, controls }) =>
 			}
 			{controls && (
 				loading
-					? <Button type="text" loading={loading}/>
+					? <LoadingOutlined className={styles.header__controls__loading}/>
 					: (
 						<Space className={styles.header__controls}>
 							{controls.map((control, index) => (
