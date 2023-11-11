@@ -86,6 +86,11 @@
     &__links {
       width: 100%;
       transition: width .3s;
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: overlay;
+      }
     }
 
     &__link {

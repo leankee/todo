@@ -1,9 +1,15 @@
 @import '../variables';
 
 .main {
-  width: $container-width;
   margin: 0 auto;
-  padding: 96px 0;
+  @media (min-width: 1601px) {
+    width: $container-width;
+    padding: 96px 0;
+  }
+  @media (max-width: 1600px) {
+    width: $container-width-laptop;
+    padding: 64px 0;
+  }
 }
 
 .header {
@@ -26,6 +32,12 @@
 
   &__controls {
     margin-left: 8px;
+
+    &__loading {
+      margin-right: 8px;
+      font-size: 18px;
+      color: $primary;
+    }
   }
 
   &__divider {

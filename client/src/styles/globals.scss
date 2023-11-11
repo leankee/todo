@@ -30,3 +30,21 @@ input {
 .ant-divider-horizontal {
   margin: 0;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($text, .24);
+  border-radius: 3px;
+
+  &:hover {
+    background-color: rgba($text, .32);;
+  }
+}
