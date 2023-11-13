@@ -22,7 +22,7 @@ export const Control: FC<ControlProps> = (props) => {
 	} = props;
 
 	return (
-		<ConfigProvider theme={context ? undefined : { token: { colorTextBase: variables.primary } }}>
+		<ConfigProvider theme={context ? { token: { colorTextBase: variables.primary } } : undefined}>
 			<Tooltip
 				title={title}
 				placement={tooltipPlacement || context ? 'right' : 'top'}
