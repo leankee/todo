@@ -4,9 +4,10 @@ import { Page } from '../hoc/Page';
 import dayjs from 'dayjs';
 import { useAppSelector } from '../hooks/redux';
 import { dateAPIFormat, dateFormat, dateFullFormat } from '../utils';
-import { ResultDeveloping } from '../components/Result/Developing';
 import { ControlFilter } from '../components/Control/Filter';
 import { ControlView, ControlViewProps } from '../components/Control/View';
+import { ITask } from '../models';
+import { TaskList } from '../components/Task/List';
 
 const Home = () => {
 	const { params, grid } = useAppSelector(state => state.home);
@@ -19,6 +20,23 @@ const Home = () => {
 	const handleViewChange: ControlViewProps['onViewChange'] = (grid) => {
 		setHomeGrid(grid);
 	};
+
+	const tasks: ITask[] = [
+		{
+			id: 1,
+			name: 'Какая-то задача 1',
+			isDone: false,
+			isFavourite: false,
+			date: dayjs(params.date).format(dateAPIFormat),
+		},
+		{
+			id: 2,
+			name: 'Какая-то задача 2',
+			isDone: false,
+			isFavourite: false,
+			date: dayjs(params.date).format(dateAPIFormat),
+		},
+	];
 
 	return (
 		<Page
@@ -38,7 +56,7 @@ const Home = () => {
 				],
 			}}
 		>
-			<ResultDeveloping/>
+			<TaskList tasks={tasks}/>
 		</Page>
 	);
 };
