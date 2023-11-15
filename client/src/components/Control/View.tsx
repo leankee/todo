@@ -1,11 +1,13 @@
 import { FC } from 'react';
-import { Control, ControlTypeProps } from './index';
+import { Control, ControlProps, ControlTypeProps } from './index';
 import { TableOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 export interface ControlViewProps extends ControlTypeProps {
 	grid: boolean;
 	onViewChange: (grid: boolean) => void;
 }
+
+const removeProps = ({ grid: _, onViewChange: __, ...rest }: ControlViewProps) => rest;
 
 export const ControlView: FC<ControlViewProps> = (props) => {
 	const {
@@ -24,7 +26,7 @@ export const ControlView: FC<ControlViewProps> = (props) => {
 		<Control
 			title={`Вид: ${grid ? 'Сетка' : 'Список'}`}
 			icon={grid ? <TableOutlined/> : <UnorderedListOutlined/>}
-			{...props}
+			{...removeProps(props)}
 			onClick={handleClick}
 		/>
 	);
