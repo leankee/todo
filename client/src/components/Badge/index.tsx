@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { Space } from 'antd';
-import styles from '../styles/components/badge.module.scss';
+import styles from '../../styles/components/badge.module.scss';
 import { LoadingOutlined } from '@ant-design/icons';
 
 export interface BadgeProps {
