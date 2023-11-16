@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Control, ControlProps, ControlTypeProps } from './index';
+import { Control, ControlTypeProps } from './index';
 import { TableOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 export interface ControlViewProps extends ControlTypeProps {
