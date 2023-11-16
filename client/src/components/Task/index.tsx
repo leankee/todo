@@ -5,12 +5,13 @@ import styles from '../../styles/components/task.module.scss';
 import { BadgeCalendar } from '../Badge/Calendar';
 import dayjs from 'dayjs';
 import { dateAPIFormat } from '../../utils';
-import { RightOutlined } from '@ant-design/icons';
+import { RightOutlined, StarFilled } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../hoc/Router';
+import { BadgeTime } from '../Badge/Time';
 
 export interface TaskProps extends ITask {
-
+	currentDate?: string;
 }
 
 export const Task: FC<TaskProps> = (props) => {
@@ -30,17 +31,21 @@ export const Task: FC<TaskProps> = (props) => {
 	return (
 		<Flex className={styles.main} vertical>
 			<Flex className={styles.container} align="center" justify="space-between">
-				<Space size="middle">
+				<div className={styles.container__title}>
 					<Checkbox
 						checked={isDone}
 						onChange={handleIsDoneChange}
 					/>
-					<span className={styles.container__name}>{props.name}</span>
-				</Space>
-				<Space>
-					{(props.date != dayjs(Date.now()).format(dateAPIFormat)) && (
+					<span className={styles.container__name}>
+						{props.name}
+					</span>
+					{isFavourite && <StarFilled className={styles.container__favourite}/>}
+				</div>
+				<Space className={styles.container__badges}>
+					{((!props.currentDate) || dayjs(props.date).format(dateAPIFormat) !== dayjs(props.currentDate).format(dateAPIFormat)) && (
 						<BadgeCalendar date={props.date} status="success"/>
 					)}
+					<BadgeTime date={props.date} status={isDone ? 'success' : 'warning'}/>
 					<Button
 						type="text"
 						size="small"
