@@ -3,7 +3,7 @@ import { useActions } from '../hooks/actions';
 import { Page } from '../hoc/Page';
 import dayjs from 'dayjs';
 import { useAppSelector } from '../hooks/redux';
-import { dateAPIFormat, dateFormat, dateFullFormat } from '../utils';
+import { dateAPIFormat, dateFormat, dateFullFormat, dateTimeAPIFormat } from '../utils';
 import { ControlFilter } from '../components/Control/Filter';
 import { ControlView, ControlViewProps } from '../components/Control/View';
 import { ITask } from '../models';
@@ -26,15 +26,29 @@ const Home = () => {
 			id: 1,
 			name: 'Какая-то задача 1',
 			isDone: false,
-			isFavourite: false,
-			date: dayjs(params.date).format(dateAPIFormat),
+			isFavourite: true,
+			date: dayjs(`${params.date} 11:00`).format(dateTimeAPIFormat),
 		},
 		{
 			id: 2,
-			name: 'Какая-то задача 2',
+			name: 'fgfdgfdgfdgdfvddfgdfngfdkjngjfdngfdkngffjgkdgnfjngfdkgnfdkgnfdjgnfdkgfjngkjfndjgknfdkjgnfjdkngfkdjfndgjknfdnkgjnjkfngkdfgnkjfdngjkfdngjfdngfndkgnfdkgnkjfdgjnfdkjgnfkdjgnffgnkjdfnffgfdgfgdgfdgfdfgfdgfdgfdgfdgfdgfdgfdgfddsfds',
+			isDone: false,
+			isFavourite: true,
+			date: '2023-11-17 12:00',
+		},
+		{
+			id: 3,
+			name: 'Какая-то задача 3',
 			isDone: false,
 			isFavourite: false,
-			date: dayjs(params.date).format(dateAPIFormat),
+			date: '2023-11-15 00:00',
+		},
+		{
+			id: 4,
+			name: 'Какая-то задача 4',
+			isDone: false,
+			isFavourite: false,
+			date: '2023-11-15 10:00',
 		},
 	];
 
@@ -56,7 +70,7 @@ const Home = () => {
 				],
 			}}
 		>
-			<TaskList tasks={tasks}/>
+			<TaskList tasks={tasks} currentDate={params.date}/>
 		</Page>
 	);
 };
