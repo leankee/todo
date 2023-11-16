@@ -10,6 +10,8 @@ $success: rgb(34, 195, 142);
 $warning: rgb(243, 139, 0);
 $error: rgb(235, 87, 87);
 
+$gold: rgb(232, 179, 57);
+
 // Sizes
 $sidebar-width: 236px;
 $sidebar-collapsed-width: 56px;
@@ -27,5 +29,10 @@ $container-width-laptop: 1140px;
   warning: $warning;
   error: $error;
 
+  gold: $gold;
+
+  sidebarWidth: $sidebar-width;
+  sidebarCollapsedWidth: $sidebar-collapsed-width;
   containerWidth: $container-width;
+  containerWidthLaptop: $container-width-laptop;
 }
