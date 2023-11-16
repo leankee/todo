@@ -1,25 +1,24 @@
 @import "../variables";
 
-.middle {
-  height: 24px;
-  padding: 0 8px;
-  font-size: 14px;
+.main {
   font-weight: normal;
   color: rgba($text, .85);
   background: rgba($text, .1);
   border-radius: 4px;
   line-height: 1;
+  transition: background .5s;
+}
+
+.middle {
+  height: 24px;
+  padding: 0 8px;
+  font-size: 14px;
 }
 
 .small {
   height: 20px;
   padding: 0 6px;
   font-size: 12px;
-  font-weight: normal;
-  color: rgba($text, .85);
-  background: rgba($text, .1);
-  border-radius: 4px;
-  line-height: 1;
 }
 
 .error {
@@ -32,4 +31,9 @@
 
 .warning {
   background: rgba($warning, .5);
+}
+
+.time {
+  min-width: 73px;
+  max-width: 73px;
 }
