@@ -9,6 +9,7 @@ export interface BadgeProps {
 	icon?: ReactNode;
 	status?: 'default' | 'error' | 'success' | 'warning';
 	size?: 'small' | 'middle';
+	className?: string;
 	loading?: boolean;
 }
 
@@ -19,21 +20,22 @@ export const Badge: FC<BadgeProps> = (props) => {
 		icon,
 		status = 'default',
 		size = 'middle',
+		className,
 		loading,
 	} = props;
-	let className = size === 'middle' ? styles.middle : styles.small;
+	let style = `${styles.main} ${size === 'middle' ? styles.middle : styles.small}`;
 
 	switch (status) {
 		case 'error': {
-			className += ` ${styles.error}`;
+			style += ` ${styles.error}`;
 			break;
 		}
 		case 'success': {
-			className += ` ${styles.success}`;
+			style += ` ${styles.success}`;
 			break;
 		}
 		case 'warning': {
-			className += ` ${styles.warning}`;
+			style += ` ${styles.warning}`;
 			break;
 		}
 		default: {
@@ -42,7 +44,7 @@ export const Badge: FC<BadgeProps> = (props) => {
 	}
 
 	return (
-		<Space className={className} size={size === 'middle' ? 8 : 6}>
+		<Space className={className ? `${style} ${className}` : style} size={size === 'middle' ? 8 : 6}>
 			{loading
 				? <LoadingOutlined/>
 				: <>{icon}{count || count === 0 ? count > 99 ? '99+' : count : title}</>
